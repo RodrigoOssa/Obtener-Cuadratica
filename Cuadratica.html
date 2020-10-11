@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" />
+<title>Cuadratica</title>
+<style type="text/css">
+body {
+	background-color: #222;
+	text-align:center;
+}
+.cen {
+	text-align: center;
+}
+article {
+	padding: 5px;
+	margin: 1%;
+	border: solid white 1px;
+	height: 100%;
+	width: 80%;
+	margin:auto;
+}
+article p{
+	display: inline;
+	color: #CCC;
+	margin-right: 10px;
+	font-size: 35px;
+
+}
+article input {
+	display: inline;
+	margin-top:5px;
+	height: 10%;
+	min-height: 75px;
+	width: 25%;
+	min-width: 200px;
+	font-size:35px;
+}
+article button {
+	padding: 0px;
+	margin-top: 7px;
+	height: 10%;
+	min-height: 45px;
+	width: 25%;
+	min-width: 115px;
+	font-size:35px;
+}
+article div {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 40px;
+	color: #CCC;
+}
+</style>
+
+<script type="text/javascript">
+var a, b, c, resul;
+var b2 = 0;
+var x1, x2;
+var raiz, aux1, aux2, aux3;
+function res(){
+	a = document.getElementById('a'); //Extraigo el valor de a
+	a = a.value; a = +a;
+	b = document.getElementById('b'); //Extraigo el valor de b
+	b = b.value; b = +b;
+	c = document.getElementById('c'); //Extraigo el valor de c
+	c = c.value; c = +c;
+	
+	b2 = Math.pow(b,2);					//Elevo b al cuadrado
+	aux1 = Math.sqrt(b2-(4*a*c));		//Raiz de b^2-4*a*c
+	x1 = b*(-1)+aux1;
+	x1 = x1/(2*a);						//Valor de x1
+	x2 = b*(-1)-aux1;					//valor de x2
+	x2 = x2/(2*a);
+	
+	resul = document.getElementById('resultado');
+	resul.innerHTML = "X1 = "+x1+"<br/>"+"X2 = "+x2; //Imprime resultado
+}
+
+</script>
+</head>
+
+<body>
+<div class="cen">
+<article>
+	<p>Valor de <strong>a</strong></p><input type="text" value="1" id="a"> <br/>
+    <p>Valor de <strong>b</strong></p><input type="text" value="1" id="b"> <br/>
+    <p>Valor de <strong>c</strong></p><input type="text" value="1" id="c"> <br/>
+    <button type="button" onclick="res()">Resultado</button><br/>
+    <p>Resultado: </p><div id="resultado"></div>
+</article>
+</div>
+</body>
+</html>
